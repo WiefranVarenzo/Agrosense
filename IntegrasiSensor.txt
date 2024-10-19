@@ -1,0 +1,52 @@
+//-----Felix Rafel
+#include "DHTesp.h"
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <PubSubClient.h>
+#include <WiFi.h>
+
+#define DHT_PIN 27
+#define TEMP_SENSOR_PIN 18
+#define LDR_PIN 13
+#define PH_PIN 35
+#define MQ135_SENSOR_PIN 34
+#define TDS_SENSOR_PIN 32  // Define TDS sensor pin
+#define LED_PIN 19
+
+// WiFi and MQTT settings
+const char* ssid = "Kecoa Berdansa";
+const char* password = "Berbahagialah1";
+const char* mqtt_server = "broker.hivemq.com";
+const int mqtt_port = 1883;
+const char* mqtt_topic_air = "csm3313_umt/group09/airquality";
+const char* mqtt_topic_temp = "csm3313_umt/group09/temperature";
+const char* mqtt_topic_humidity = "csm3313_umt/group09/humidity";
+const char* mqtt_topic_tds = "csm3313_umt/group09/tds";
+const char* mqtt_topic_ph = "csm3313_umt/group09/ph";
+const char* mqtt_topic_light = "csm3313_umt/group09/light";
+const char* mqtt_led_topic = "csm3313_umt/group09/led01";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// DHT sensor
+DHTesp dht;
+
+// DS18B20 sensor
+OneWire oneWire(TEMP_SENSOR_PIN);
+DallasTemperature DS18B20(&oneWire);
+
+void setup_wifi() {
+  Serial.begin(115200);
+  Serial.println();
+  Serial.print("Connecting to WiFi");
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+}

@@ -1,0 +1,25 @@
+.sensor-box {
+    background-color: rgba(20, 33, 100, 0.8); /* White with transparency */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(148, 146, 146, 0.2); /* Subtle shadow for 3D effect */
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px; /* Font size */
+    height: 120px; /* Fixed height */
+    width: 120px; /* Fixed width */
+    margin: 5px; /* Space around the boxes */
+}
+
+.sensor-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sensor-value {
+    font-size: 1.2em;
+}

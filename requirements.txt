@@ -1,0 +1,5 @@
+streamlit
+paho-mqtt
+tensorflow
+Pillow
+streamlit-option-menu
