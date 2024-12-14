@@ -19,5 +19,5 @@ Our Team - The Ravale (Group 16)
 | Felix Rafael       | Data Scientist & Back-End Developer|
 | Jessica Theresia   | Product Designer & Front-End Developer|
 | Jessica Valencia C | IoT & Business Analyst|
-| Wiefran Varenzo    | IoT Engineer & Programmer|
+| Wiefran Varenzo    | IoT Engineer & Data Scientist|
 
